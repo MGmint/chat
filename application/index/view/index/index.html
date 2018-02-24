@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>主页</title>
+    <link rel="stylesheet" type="text/css" href="__STATIC__/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="__STATIC__/css/clear.css">
+    <link rel="stylesheet" type="text/css" href="__STATIC__/css/index.css">
+    <script src="__STATIC__/js/jquery-2.2.3.min.js"></script>
+    <script src="__STATIC__/js/index.js"></script>
+</head>
+<body>
+<header>
+    <img id="userimg" src="__STATIC__/images/userimg.png">
+    <section id="usernamebox">
+        <section class="unamestate">
+            <b>{$unc}</b>
+            <img id="loginstate" src="__STATIC__/images/state.png">
+        </section>
+        <p class="describe">CBCSS公司出品的高级图像合成软件哦···</p>
+    </section>
+</header>
+<nav>
+    <label class="sslabel">搜索：</label>
+    <input id="searchbar" type="search" name="" placeholder="联系人、部门、姓名、手机号">
+</nav>
+<article>
+    <ul class="ulbox">
+        <li class="active">企业结构</li>
+        <li>最近</li>
+        <li>讨论组</li>
+    </ul>
+    <section class="hideshowbox">
+        <a class="biaoti" href="javascript:;">市场部</a>
+        <ul class="hideshowul">
+            {volist name="userlist" id="data"}
+            <li>
+                <a href="javascript:;" class="sjopenwid">
+                    <img class="uminimg" src="__STATIC__/images/minimg.png">
+                    <section class="uminbox" data-name="{$data.user_name}">
+                        <span>{$data.user_name}</span>
+                        <p>CBCSS公司出品的高级图像合成软件CBCSS公司出品的高级图像合成软件哦···</p>
+                    </section>
+                </a>
+            </li>
+            {/volist}
+        </ul>
+    </section>
+    <section class="hideshowbox"></section>
+    <section class="hideshowbox"></section>
+</article>
+<footer></footer>
+</body>
+</html>

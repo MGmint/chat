@@ -1,0 +1,46 @@
+
+	数据库名称：cbcssoa
+
+用户表：
+	user
+		user_id				(int)
+		user_name 			(varchar)(100)	用户名
+		user_pswd 			(varchar)(100)	密码
+		user_websocket_id 	(varchar)(100)	通信id
+		user_login_state	(int)(4)	登录状态
+		user_read_state		(int)(4)	阅读状态
+
+用户信息表：
+	personal_info
+		pinfo_user_id
+		pinfo_user_phone 		(varchar)(100)	手机
+		pinfo_user_email 		(varchar)(100)	邮箱
+		pinfo_user_staff_Code 	(varchar)(100)	员工编号
+		pinfo_user_Joined_date 	(varchar)(100)	入职日期
+		pinfo_user_job 			(varchar)(100)	职位
+		pinfo_user_department 	(varchar)(100)	所属部门
+		pinfo_user_company 		(varchar)(100)	所属公司
+
+聊天记录表：
+    chat_record
+    	chat_record_id
+        zhu_user_nickname
+        ke_user_nickname
+        chat_record_content
+        chat_record_time
+
+业务逻辑：
+	注册：
+		1、获取输入的 用户名、密码
+		2、存入 用户表。
+	登录：
+		1、查询数据库中的 用户表 相对应的 用户名字段、密码字段
+		2、判断是否存在，存在即跳转主页；不存在 跳转至 注册页
+	主页：
+		1、用户头像，
+		2、用户名称：读取 用户表 用户名字段
+		3、用户职位：读取 用户信息表 职位字段
+		4、企业结构：
+			读取 用户信息表 中的 所属部门 字段。
+
+主页连接 websocket，获取通信id，更新 用户通讯id 字段、登录状态 字段

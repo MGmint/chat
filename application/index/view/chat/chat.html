@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>聊天</title>
+    <link rel="stylesheet" type="text/css" href="__STATIC__/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="__STATIC__/css/clear.css">
+    <link rel="stylesheet" type="text/css" href="__STATIC__/css/chat.css">
+    {include file="public/header" /}
+</head>
+<body>
+<header id="chattop">
+    <img id="guestuserimg" src="__STATIC__/images/guestuserimg.png">
+    <section id="guestusernamebox" data-postkuid="{:url('Chat/postkuid')}">
+        <b class="guestname"> </b>
+        <p class="guestdescribe">CBCSS公司出品的高级图像合成软件哦···</p>
+    </section>
+</header>
+<article id="chatcontent" data-name="{$unc}">
+    <ul id="chatcontentul" data-ajaxchat="{:url('Chat/chatajax')}">
+    </ul>
+</article>
+<footer id="footerbox">
+    <section class="toolbar"></section>
+    <section class="saycontent">
+        <textarea class="entrysay" autofocus="autofocus" required="required"></textarea>
+        <button class="sendsay">发送</button>
+        <button class="closebtn" data-closeurl="{:url('Chat/closeurl')}">关闭</button>
+    </section>
+</footer>
+</body>
+</html>
